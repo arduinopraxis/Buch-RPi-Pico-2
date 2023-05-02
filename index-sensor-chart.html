@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pico W</title>
+<meta http-equiv="refresh" content="5">
+</head>
+<body>
+<h1>Pico W - Analog-Werte</h1>
+		
+<div style="width: 500px;">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['A0', 'A1', 'A2'],
+      datasets: [{
+        label: '# Analog Inputs',
+        data: [vA0, vA1, vA2],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+    </body>
+</html>
+
+
